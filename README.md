@@ -6,7 +6,7 @@ El objetivo del proyecto fue implementar un flujo completo de pruebas de integra
 
 ---
 
-## 🛠️ Tecnologías utilizadas
+##  Tecnologías utilizadas
 
 * **Playwright (APIRequestContext):** Para la ejecución y aserciones de peticiones HTTP.
 * **TypeScript:** Para escribir un código estructurado, limpio y con tipado seguro.
@@ -14,7 +14,7 @@ El objetivo del proyecto fue implementar un flujo completo de pruebas de integra
 
 ---
 
-## 🧪 Pruebas implementadas (CRUD)
+##  Pruebas implementadas (CRUD)
 
 La suite valida las operaciones principales sobre el recurso de usuarios:
 
@@ -25,7 +25,7 @@ La suite valida las operaciones principales sobre el recurso de usuarios:
 
 ---
 
-## 🚀 Cómo ejecutar las pruebas en tu máquina
+##  Cómo ejecutar las pruebas en tu máquina
 
 Si deseas correr la suite localmente, sigue estos pasos:
 
