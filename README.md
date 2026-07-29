@@ -1,6 +1,6 @@
 # Pruebas Automatizadas de API con Playwright
 
-¡Hola! En este repositorio desarrollé una suite de pruebas automatizadas para servicios backend (REST APIs) utilizando **Playwright** con **TypeScript**. 
+En este repositorio desarrollé una suite de pruebas automatizadas para servicios backend (REST APIs) utilizando **Playwright** con **TypeScript**. 
 
 El objetivo del proyecto fue implementar un flujo completo de pruebas de integración para endpoints HTTP (CRUD), asegurando la calidad de las respuestas y la estructura de los datos enviando peticiones directamente desde código sin necesidad de interfaz gráfica.
 
