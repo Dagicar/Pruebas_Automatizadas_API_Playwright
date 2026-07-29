@@ -1,0 +1,13 @@
+# Dependencias de Node
+node_modules/
+
+# Archivos y reportes generados por Playwright
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+
+# Archivos de entorno y temporales
+.env
+*.log
+.DS_Store

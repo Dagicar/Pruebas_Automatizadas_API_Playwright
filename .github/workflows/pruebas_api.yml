@@ -1,0 +1,33 @@
+name: Pruebas Automatizadas de API
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  ejecutar-pruebas:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener codigo del repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Ejecutar pruebas de API con Playwright
+        run: npx playwright test
+
+      - name: Subir reporte de pruebas
+        uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: reporte-playwright-api
+          path: playwright-report/
+          retention-days: 30
