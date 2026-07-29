@@ -1,28 +1,27 @@
 # Pruebas Automatizadas de API con Playwright
 
-En este repositorio desarrollé una suite de pruebas automatizadas para servicios backend (REST APIs) utilizando **Playwright** con **TypeScript**. 
-
-El objetivo del proyecto fue implementar un flujo completo de pruebas de integración para endpoints HTTP (CRUD), asegurando la calidad de las respuestas y la estructura de los datos enviando peticiones directamente desde código sin necesidad de interfaz gráfica.
+En este repositorio implementé un **conjunto de pruebas automatizadas** para servicios backend (REST APIs) utilizando **Playwright** con **TypeScript**, aplicando patrones de diseño y buenas prácticas de automatización.
 
 ---
 
-##  Tecnologías utilizadas
+## 🛠️ Tecnologías y Patrones Aplicados
 
-* **Playwright (APIRequestContext):** Para la ejecución y aserciones de peticiones HTTP.
-* **TypeScript:** Para escribir un código estructurado, limpio y con tipado seguro.
-* **GitHub Actions:** Integración continua (CI/CD) para la ejecución automática de la suite en cada push.
+* **Playwright (`APIRequestContext`):** Ejecución de peticiones HTTP y validación de respuestas.
+* **TypeScript:** Código limpio, mantenible y con tipado estático.
+* **Patrón API Service:** Separación de la lógica de peticiones de los archivos de prueba.
+* **Data-Driven Testing:** Separación de payloads en archivos JSON dinámicos.
+* **Validación de Esquemas JSON (Ajv):** Aseguramiento de la estructura e integridad de las respuestas de la API.
+* **GitHub Actions:** Pipeline de CI/CD para la ejecución automática de las pruebas.
 
 ---
 
-##  Pruebas implementadas (CRUD)
+## 🧪 Casos de Prueba Implementados
 
-La suite valida las operaciones principales sobre el recurso de usuarios:
-
-1. **Obtener usuarios (`GET`):** Validación de estado HTTP `200 OK` y verificación del esquema de la lista de usuarios.
-2. **Crear usuario (`POST`):** Confirmación de creación exitosa con estado HTTP `201 Created` y validación del ID generado.
-3. **Actualizar usuario (`PUT`):** Modificación total de registros y comprobación de datos actualizados.
-4. **Eliminar usuario (`DELETE`):** Validación de la eliminación correcta del recurso con estado HTTP `200 OK`.
-
+1. **Obtener usuarios (`GET`):** Validación de respuesta exitosa `200 OK` y verificación del listado.
+2. **Crear usuario (`POST`):** Creación de registro desde un payload `.json` con validación `201 Created`.
+3. **Actualizar usuario (`PUT`):** Modificación completa de un usuario existente.
+4. **Eliminar usuario (`DELETE`):** Confirmación de eliminación correcta del recurso.
+5. **Validación de Esquema JSON:** Comprobación estricta del contrato de respuesta utilizando contratos de tipos.
 ---
 
 ##  Cómo ejecutar las pruebas en tu máquina
