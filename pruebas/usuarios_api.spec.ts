@@ -1,6 +1,10 @@
 import { test, expect } from '@playwright/test';
 import { ServicioUsuarios } from '../servicios/servicio_usuarios';
 import datosNuevoUsuario from '../datos/usuario_nuevo.json';
+import { esquemaUsuario } from '../esquemas/usuario_esquema';
+import Ajv from 'ajv';
+
+const ajv = new Ajv();
 
 test.describe('Pruebas de API - Gestión de Usuarios', () => {
 
@@ -47,6 +51,21 @@ test.describe('Pruebas de API - Gestión de Usuarios', () => {
     const respuesta = await servicio.eliminarUsuario(1);
 
     expect(respuesta.status()).toBe(200);
+  });
+
+  test('Debería validar que la respuesta cumple con el esquema JSON esperado', async ({ request }) => {
+    const servicio = new ServicioUsuarios(request);
+    const respuesta = await servicio.obtenerUsuarios();
+    const cuerpo = await respuesta.json();
+
+    // Validamos el primer usuario de la lista contra el esquema
+    const esValido = ajv.validate(esquemaUsuario, cuerpo[0]);
+
+    if (!esValido) {
+      console.error('Errores en el esquema:', ajv.errors);
+    }
+
+    expect(esValido).toBeTruthy();
   });
 
 });

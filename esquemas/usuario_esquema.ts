@@ -1,0 +1,11 @@
+export const esquemaUsuario = {
+  type: "object",
+  properties: {
+    id: { type: "number" },
+    name: { type: "string" },
+    username: { type: "string" },
+    email: { type: "string" }
+  },
+  required: ["id", "name", "email"],
+  additionalProperties: true
+};
